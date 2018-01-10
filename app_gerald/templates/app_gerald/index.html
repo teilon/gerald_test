@@ -1,0 +1,24 @@
+{% extends 'app_gerald/base.html' %}
+
+{% block content %}
+
+<h1>Романовы</h1>
+
+<div class="btn-group m-2">
+    <button class="btn btn-primary">Романовы за последние два века</button>
+    <a href="{% url 'get_woman' %}" class="btn btn-primary">Женщины Романовы</a>
+    <a href="{% url 'get_king' %}" class="btn btn-primary">Правители</a>
+</div>
+
+{% if list|length > 1 %}
+    <div>
+
+        {% for p in list %}
+            <p>{{ p.last_name }} {{ p.name }} {{ p.father_name }}</p>
+        {% endfor %}
+
+    </div>
+{% endif %}
+
+
+{% endblock %}

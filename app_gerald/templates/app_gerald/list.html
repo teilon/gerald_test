@@ -1,0 +1,25 @@
+{% extends 'app_gerald/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="container-fluid mt-5">
+    <div class="container p-5">
+        <div class="card-deck">
+        {% for p in list %}
+            <div class="card">
+                <img src="{% static 'app_gerald/images/romanov.jpg' %}" alt=""
+                     class="card-img-top">
+                <div class="card-body"><h4><a href="{% url 'person' p.id %}">
+                    {{ p.last_name }}
+                </a></h4></div>
+                <p class="card-test">
+                    {{ p.name }} {{ p.father_name }}
+                </p>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

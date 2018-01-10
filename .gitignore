@@ -1,0 +1,7 @@
+env_gerald
+db.sqlite3
+.idea
+
+proj_gerald/__pycache__
+app_gerald/__pycache__
+app_gerald/migrations/__pycache__
